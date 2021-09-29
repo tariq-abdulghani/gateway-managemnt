@@ -1,7 +1,7 @@
 <div class="container mt-5 shadow-sm pb-3">
 
     <h5>Gateways</h5>
-    <form class="row row-cols-lg-auto g-3 align-items-center">
+    <form #form="ngForm" class="row row-cols-lg-auto g-3 align-items-center">
         <!-- <div class="col-12">
             <label class="visually-hidden" for="inlineFormInputGroupUsername">id</label>
             <div class="input-group">
@@ -10,16 +10,16 @@
         </div> -->
 
         <div class="col-12">
-            <label class="visually-hidden" for="inlineFormInputGroupUsername">serial number</label>
+            <label class="visually-hidden" for="serial-number">serial number</label>
             <div class="input-group">
-                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="serial number">
+                <input type="text" name="serialNumber"  ngModel class="form-control" id="serial-number" placeholder="serial number">
             </div>
         </div>
 
         <div class="col-12">
-            <label class="visually-hidden" for="inlineFormInputGroupUsername">human name</label>
+            <label class="visually-hidden" for="human-name">human name</label>
             <div class="input-group">
-                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="human name">
+                <input type="text" name="humanName" ngModel class="form-control" id="human-name" placeholder="human name">
             </div>
         </div>
 
@@ -27,11 +27,11 @@
             <label class="visually-hidden" for="inlineFormInputGroupUsername">IPv4</label>
             <div class="input-group">
                 <!-- <div class="input-group-text">@</div> -->
-                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Ipv4">
+                <input type="text" name="IPv4" ngModel class="form-control" id="inlineFormInputGroupUsername" placeholder="Ipv4">
             </div>
         </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">add</button>
+            <button type="button" class="btn btn-primary" (click)="onAdd(form.value)">add</button>
         </div>
     </form>
 </div>
@@ -54,7 +54,7 @@
                     <a [routerLink]="['/gateway', gate.id]" > show</a>
                 </td>
                 <td>
-                    <button class="btn btn-danger">remove</button>
+                    <button class="btn btn-danger" (click)="onRemove(gate)">remove</button>
                 </td>
             </tr>
         </tbody>

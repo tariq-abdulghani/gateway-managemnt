@@ -7,6 +7,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { GatewayComponent } from './components/gateway/gateway.component';
 import { DeviceComponent } from './components/device/device.component';
 import { GatewayBoardComponent } from './components/gateway-board/gateway-board.component';
+import { HttpClientModule} from  '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { GatewayBoardComponent } from './components/gateway-board/gateway-board.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
