@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Device } from 'src/app/models/device';
 
 @Component({
   selector: 'app-gateway',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gateway.component.css']
 })
 export class GatewayComponent implements OnInit {
-
+  gateWayid:number = 1;
+  devices: Device[] = [];
   constructor() { }
 
   ngOnInit(): void {

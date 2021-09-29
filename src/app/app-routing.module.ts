@@ -6,7 +6,7 @@ import { GatewayComponent } from './components/gateway/gateway.component';
 
 const routes: Routes = [
   {path:"", component: GatewayBoardComponent},
-  {path:"gateway", component: GatewayComponent},
+  {path:"gateway/:id", component: GatewayComponent},
   {path:"device", component: DeviceComponent}
 ];
 

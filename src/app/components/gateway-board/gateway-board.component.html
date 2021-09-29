@@ -1,11 +1,13 @@
-<div class="container mt-5">
+<div class="container mt-5 shadow-sm pb-3">
+
+    <h5>Gateways</h5>
     <form class="row row-cols-lg-auto g-3 align-items-center">
-        <div class="col-12">
+        <!-- <div class="col-12">
             <label class="visually-hidden" for="inlineFormInputGroupUsername">id</label>
             <div class="input-group">
                 <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="id">
             </div>
-        </div>
+        </div> -->
 
         <div class="col-12">
             <label class="visually-hidden" for="inlineFormInputGroupUsername">serial number</label>
@@ -34,12 +36,13 @@
     </form>
 </div>
 
-<div class="container mt-5">
+<div class="container mt-5 shadow-sm pb-3">
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">id</th>
                 <th scope="col">name</th>
+                <th> view</th>
                 <th scope="col">remove</th>
             </tr>
         </thead>
@@ -47,6 +50,9 @@
             <tr *ngFor="let gate of gateWays">
                 <th scope="row">{{ gate.id }}</th>
                 <td>{{ gate.humanName }}</td>
+                <td>
+                    <a [routerLink]="['/gateway', gate.id]" > show</a>
+                </td>
                 <td>
                     <button class="btn btn-danger">remove</button>
                 </td>

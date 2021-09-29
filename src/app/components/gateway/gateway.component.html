@@ -1,1 +1,63 @@
-<p>gateway works!</p>
+<div class="container mt-5 shadow-sm pb-3">
+
+    <h5>Gateway {{gateWayid}}</h5>
+    <h6>Devices</h6>
+    <form class="row row-cols-lg-auto g-3 align-items-center">
+        <!-- <div class="col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">id</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="id">
+            </div>
+        </div> -->
+
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">serial number</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="serial number">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">human name</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="human name">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">IPv4</label>
+            <div class="input-group">
+                <!-- <div class="input-group-text">@</div> -->
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Ipv4">
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">add</button>
+        </div>
+    </form>
+</div>
+
+<div class="container mt-5 shadow-sm pb-3">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">name</th>
+                <th> view</th>
+                <th scope="col">remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let device of devices">
+                <th scope="row">{{ gate.id }}</th>
+                <td>{{ gate.humanName }}</td>
+                <td>
+                    <a [routerLink]="['/gateway', gate.id]" > show</a>
+                </td>
+                <td>
+                    <button class="btn btn-danger">remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
